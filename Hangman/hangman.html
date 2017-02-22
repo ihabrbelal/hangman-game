@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>hangman</title>
+    <!-- Added link to the jQuery Library -->
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.js"></script> -->
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- start of Java script -->
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1 class="text-center">HANGMAN</h1>
+        <h3 class="text-center">THINK OF AN ANIMAL</h3>
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- to show number of letters and the answer -->
+            <div class="col-md-12">
+                <h3 id="wordToGuess" style="text-align: center"> _ _ _ </h3>
+            </div>
+        </div>
+        <br>
+        <br>
+        <!-- <div class="row">
+            <div class="col-md-12">
+                <h4></h4>
+            </div>
+        </div>
+ -->
+        <div class="row" name="game">
+            <div class="col-md-4">
+                <div class="input-group">
+                    <span class="input-group-addon" id="displayWord">Wrong Guesses:</span>
+                    <input type="text" class="form-control" id="wrongGuesses" disabled value="" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <span class="input-group-addon">Guesses Left:</span>
+                    <input type="text" class="form-control" id="guessesLeft" disabled value="">
+                </div>
+            </div>
+        </div>
+        <div class="row" name="game">
+            <div class="col-md-4">
+                <div class="input-group">
+                    <span class="input-group-addon" id="displayWord">Win counter:</span>
+                    <input type="text" class="form-control" id="lossCounter" disabled value="" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <span class="input-group-addon">Loss Counter:</span>
+                    <input type="text" class="form-control" id="winCounter" disabled value="">
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <!-- letters container (keyboard style) -->
+            <div class=col-md-12 style="text-align: center;">
+                <button id="button-Q" class="btn btn-primary btnLetter" value="Q">
+                    <h4>Q</h4></button>
+                <button id="button-W" class="btn btn-primary btnLetter" value="W">
+                    <h4>W</h4></button>
+                <button id="button-E" class="btn btn-primary btnLetter" value="E">
+                    <h4>E</h4></button>
+                <button id="button-R" class="btn btn-primary btnLetter" value="R">
+                    <h4>R</h4></button>
+                <button id="button-T" class="btn btn-primary btnLetter" value="T">
+                    <h4>T</h4></button>
+                <button id="button-Y" class="btn btn-primary btnLetter" value="Y">
+                    <h4>Y</h4></button>
+                <button id="button-U" class="btn btn-primary btnLetter" value="U">
+                    <h4>U</h4></button>
+                <button id="button-I" class="btn btn-primary btnLetter" value="I">
+                    <h4>I</h4></button>
+                <button id="button-O" class="btn btn-primary btnLetter" value="O">
+                    <h4>O</h4></button>
+                <button id="button-P" class="btn btn-primary btnLetter" value="P">
+                    <h4>P</h4></button>
+                <br>
+                <br>
+                <button id="button-A" class="btn btn-primary btnLetter" value="A">
+                    <h4>A</h4></button>
+                <button id="button-S" class="btn btn-primary btnLetter" value="S">
+                    <h4>S</h4></button>
+                <button id="button-D" class="btn btn-primary btnLetter" value="D">
+                    <h4>D</h4></button>
+                <button id="button-F" class="btn btn-primary btnLetter" value="F">
+                    <h4>F</h4></button>
+                <button id="button-G" class="btn btn-primary btnLetter" value="G">
+                    <h4>G</h4></button>
+                <button id="button-H" class="btn btn-primary btnLetter" value="H">
+                    <h4>H</h4></button>
+                <button id="button-J" class="btn btn-primary btnLetter" value="J">
+                    <h4>J</h4></button>
+                <button id="button-K" class="btn btn-primary btnLetter" value="K">
+                    <h4>K</h4></button>
+                <button id="button-L" class="btn btn-primary btnLetter" value="L">
+                    <h4>L</h4></button>
+                <br>
+                <br>
+                <button id="button-Z" class="btn btn-primary btnLetter" value="Z">
+                    <h4>Z</h4></button>
+                <button id="button-X" class="btn btn-primary btnLetter" value="X">
+                    <h4>X</h4></button>
+                <button id="button-C" class="btn btn-primary btnLetter" value="C">
+                    <h4>C</h4></button>
+                <button id="button-V" class="btn btn-primary btnLetter" value="V">
+                    <h4>V</h4></button>
+                <button id="button-B" class="btn btn-primary btnLetter" value="B">
+                    <h4>B</h4></button>
+                <button id="button-N" class="btn btn-primary btnLetter" value="N">
+                    <h4>N</h4></button>
+                <button id="button-M" class="btn btn-primary btnLetter" value="M">
+                    <h4>M</h4></button>
+                <br>
+                <br>
+            </div>
+            <!-- END OF LETTERS CONTAINER -->
+            <!-- start/reset button -->
+            <div class="row" style="text-align: center;">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <button id="restart" class="btn btn-primary restart">
+                        <h3>Start/End Game</h3></button>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    <!-- start of Java script -->
+    <script type="text/javascript">
+    var wordOptions = ["cat", "dog", "elephant", "horse", "donkey", "bufflo", "rhino", "tiger", "fox", "monkey", "wolf", "coyote"];
+    var selectedWord = "";
+    var lettersInWord = [];
+    var numBlanks = 0;
+    var blanksAndSuccesses = [];
+    var wrongGuesses = []; // c _ _ 
+
+    var winCount = 0;
+    var lossGuess = 0;
+    var guessesLeft = 9;
+    var randomWord = "";
+
+    function startGame() {
+        // selcet a word from array "words" randomly
+        randomWord = wordOptions[Math.floor(Math.random() * wordOptions.length)];
+        // check how many letters in the word
+        lettersInWord = randomWord.split("");
+        // check how many blanks required for each word
+        numBlanks = lettersInWord.length;
+        // console.log(randomWord);
+        // console.log(lettersInWord);
+        // console.log(numBlanks);
+
+        for (var i = 0; i < numBlanks; i++) {
+            blanksAndSuccesses.push("___");
+        }
+        document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
+
+
+    }
+
+    startGame();
+
+    // document.getElementById("button-M").onclick = function(event) { // // var clickedLetter = getElementById("b").value; // document.getElementById("wordToGuess").value = getElementById("button-M").value;
+
+    // function(event);
+    // };
+    </script>
+</body>
+
+</html>
