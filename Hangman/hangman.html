@@ -34,8 +34,8 @@
         <div class="row" name="game">
             <div class="col-md-4">
                 <div class="input-group">
-                    <span class="input-group-addon" id="displayWord">Wrong Guesses:</span>
-                    <input type="text" class="form-control" id="wrongGuesses" disabled value="" />
+                    <span class="input-group-addon" id="displayWord">Wrong Guesses:<span id="wrongGuesses"></span></span>
+                    <!-- <input type="text" class="form-control" id="wrongGuesses" disabled value="" /> -->
                 </div>
             </div>
             <div class="col-md-4">
@@ -47,16 +47,16 @@
             </div>
             <div class="col-md-4">
                 <div class="input-group">
-                    <span class="input-group-addon">Guesses Left:</span>
-                    <input type="text" class="form-control" id="guessesLeft" disabled value="">
+                    <span class="input-group-addon">Guesses Left:&nbsp;<span id="numGuesses"></span></span>
+                    <!-- <input type="text" class="form-control" id="guessesLeft" disabled value=""> -->
                 </div>
             </div>
         </div>
         <div class="row" name="game">
             <div class="col-md-4">
                 <div class="input-group">
-                    <span class="input-group-addon" id="displayWord">Win counter:</span>
-                    <input type="text" class="form-control" id="lossCounter" disabled value="" />
+                    <span class="input-group-addon" id="displayWord">Win counter:&nbsp;<span id="winCounter"></span></span>
+                    <!-- <input type="text" class="form-control" id="lossCounter" disabled value="" /> -->
                 </div>
             </div>
             <div class="col-md-4">
@@ -68,8 +68,8 @@
             </div>
             <div class="col-md-4">
                 <div class="input-group">
-                    <span class="input-group-addon">Loss Counter:</span>
-                    <input type="text" class="form-control" id="winCounter" disabled value="">
+                    <span class="input-group-addon">Loss Counter:&nbsp;<span id="lossCounter"></span></span>
+                    <!-- <input type="text" class="form-control" id="winCounter" disabled value=""> -->
                 </div>
             </div>
         </div>
@@ -159,34 +159,115 @@
     var selectedWord = "";
     var lettersInWord = [];
     var numBlanks = 0;
-    var blanksAndSuccesses = [];
-    var wrongGuesses = []; // c _ _ 
+    var blanksAndSuccesses = []; // C _ _ 
+    var wrongGuesses = [];
+    var wrongLetters = [];
 
-    var winCount = 0;
+    var winCount = 1;
+    var lossCount = 0;
     var lossGuess = 0;
     var guessesLeft = 9;
     var randomWord = "";
 
     function startGame() {
+
+        // reset the counters
+        selectedWord = "";
+        lettersInWord = [];
+        numBlanks = 0;
+        blanksAndSuccesses = [];
+        wrongGuesses = [];
+        wrongLetters = [];
+        // winCount = 0;
+        // lossCount = 0;
+        lossGuess = 0;
+        guessesLeft = 9;
+        randomWord = "";
+
+
+
         // selcet a word from array "words" randomly
-        randomWord = wordOptions[Math.floor(Math.random() * wordOptions.length)];
+        selectedWord = wordOptions[Math.floor(Math.random() * wordOptions.length)];
+
         // check how many letters in the word
-        lettersInWord = randomWord.split("");
+        lettersInWord = selectedWord.split("");
         // check how many blanks required for each word
         numBlanks = lettersInWord.length;
-        // console.log(randomWord);
-        // console.log(lettersInWord);
-        // console.log(numBlanks);
+        console.log(selectedWord);
+        console.log(lettersInWord);
+        console.log(numBlanks);
+
+        // first method to get the blanks
 
         for (var i = 0; i < numBlanks; i++) {
-            blanksAndSuccesses.push("___");
+            blanksAndSuccesses.push("_");
         }
-        document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
 
+        // another way to get the blanks
+        /*
+        for (var i = 0; i < lettersInWord.length; i++) {
+            if (this.lettersInWord[i] === " ") {
+                this.lettersInWord[i] = "&nbsp;";
+
+            } else {
+                this.lettersInWord[i] = "_";
+            } */
+
+        // console.log(lettersInWord);
+
+        document.getElementById("wordToGuess").innerHTML = this.blanksAndSuccesses.join(" ");
+        document.getElementById("numGuesses").innerHTML = guessesLeft;
+        document.getElementById("wrongGuesses").innerHTML = this.wrongGuesses;
+        // document.getElementById("winCounter").innerHTML = this.winCount;
+        document.getElementById("lossCounter").innerHTML = lossCount;
+    }
+
+    function checkLetters(letter) {
+        var isLetterInWord = false;
+        for (var i = 0; i < numBlanks; i++) {
+            if (selectedWord[i] == letter) {
+                isLetterInWord = true;
+                // alert("letter found");
+            }
+        }
+
+        if (isLetterInWord) {
+            for (var i = 0; i < numBlanks; i++) {
+                if (selectedWord[i] == letter) {
+                    blanksAndSuccesses[i] = letter;
+                    document.getElementById("wordToGuess").innerHTML = this.blanksAndSuccesses.join(" ");
+                }
+            }
+        } else {
+            wrongLetters.push(letter);
+            guessesLeft--
+        }
+        console.log(wrongLetters);
+        console.log(guessesLeft);
+    }
+
+    function roundComplete() {
+        if (lettersInWord.toString() == blanksAndSuccesses.toString()) {
+            alert("You Won");
+            document.getElementById("winCounter").innerHTML = winCount++;
+            startGame();
+        }
+    }
+
+
+
+
+
+
+    startGame();
+    document.onkeyup = function(event) {
+        var letterGussed = String.fromCharCode(event.keyCode).toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+        // console.log(letterGussed);
 
     }
 
-    startGame();
 
     // document.getElementById("button-M").onclick = function(event) { // // var clickedLetter = getElementById("b").value; // document.getElementById("wordToGuess").value = getElementById("button-M").value;
 
