@@ -163,11 +163,10 @@
     var wrongGuesses = [];
     var wrongLetters = [];
 
-    var winCount = 1;
+    var winCount = 0;
     var lossCount = 0;
     var lossGuess = 0;
     var guessesLeft = 9;
-    var randomWord = "";
 
     function startGame() {
 
@@ -181,8 +180,7 @@
         winCount = 0;
         lossCount = 0;
         lossGuess = 0;
-        // guessesLeft = 9;
-        randomWord = "";
+        guessesLeft = 9;
 
 
 
@@ -242,9 +240,9 @@
         } else {
             wrongLetters.push(letter);
             guessesLeft--
+            document.getElementById("numGuesses").innerHTML = this.guessesLeft;
+            document.getElementById("wrongGuesses").innerHTML = wrongLetters;
         }
-        console.log(wrongLetters);
-        console.log(guessesLeft);
     }
 
     function roundComplete() {
@@ -257,6 +255,7 @@
             lossCount++;
             alert(" You lost");
             document.getElementById("lossCounter").innerHTML = this.lossCount;
+            startGame();
         }
     }
 
