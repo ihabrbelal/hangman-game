@@ -12,22 +12,21 @@
 </head>
 
 <body>
-    <div class="jumbotron">
-        <h1 class="text-center">HANGMAN</h1>
-        <h3 class="text-center">THINK OF AN ANIMAL</h3>
+    <div class="jumbotron" style="height:100px; padding:10px">
+        <h2 class="text-center">HANGMAN</h2>
+        <h4 class="text-center">THINK OF AN ANIMAL</h4>
     </div>
     <div class="container">
-        <div class="row">
-            <!-- to show number of letters and the answer -->
-            <div class="col-md-12">
-                <h3 id="wordToGuess" style="text-align: center"> _ _ _ </h3>
-            </div>
-        </div>
-        <br>
+        <!-- <div class="row"> -->
+        <!-- to show number of letters and the answer -->
+        <!-- <div class="col-md-12"> -->
+        <!-- <h3 id="wordToGuess" style="text-align: center"> _ _ _ </h3> -->
+        <!-- </div> -->
+        <!-- </div> -->
         <br>
         <!-- <div class="row">
             <div class="col-md-12">
-                <h4></h4>
+                <h5></h5>
             </div>
         </div>
  -->
@@ -39,9 +38,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <br>
-                <br>
-                <br>
+                <h3 id="wordToGuess" style="text-align: center; background-color: #eeeeee"> _ _ _ </h3>
                 <br>
                 <br>
             </div>
@@ -62,9 +59,6 @@
             <div class="col-md-4">
                 <br>
                 <br>
-                <br>
-                <br>
-                <br>
             </div>
             <div class="col-md-4">
                 <div class="input-group">
@@ -74,66 +68,65 @@
             </div>
         </div>
         <br>
-        <br>
         <div class="row">
             <!-- letters container (keyboard style) -->
             <div class=col-md-12 style="text-align: center;">
                 <button id="button-Q" class="btn btn-primary btnLetter" value="Q">
-                    <h4>Q</h4></button>
+                    <h5>Q</h5></button>
                 <button id="button-W" class="btn btn-primary btnLetter" value="W">
-                    <h4>W</h4></button>
+                    <h5>W</h5></button>
                 <button id="button-E" class="btn btn-primary btnLetter" value="E">
-                    <h4>E</h4></button>
+                    <h5>E</h5></button>
                 <button id="button-R" class="btn btn-primary btnLetter" value="R">
-                    <h4>R</h4></button>
+                    <h5>R</h5></button>
                 <button id="button-T" class="btn btn-primary btnLetter" value="T">
-                    <h4>T</h4></button>
+                    <h5>T</h5></button>
                 <button id="button-Y" class="btn btn-primary btnLetter" value="Y">
-                    <h4>Y</h4></button>
+                    <h5>Y</h5></button>
                 <button id="button-U" class="btn btn-primary btnLetter" value="U">
-                    <h4>U</h4></button>
+                    <h5>U</h5></button>
                 <button id="button-I" class="btn btn-primary btnLetter" value="I">
-                    <h4>I</h4></button>
+                    <h5>I</h5></button>
                 <button id="button-O" class="btn btn-primary btnLetter" value="O">
-                    <h4>O</h4></button>
+                    <h5>O</h5></button>
                 <button id="button-P" class="btn btn-primary btnLetter" value="P">
-                    <h4>P</h4></button>
+                    <h5>P</h5></button>
                 <br>
                 <br>
                 <button id="button-A" class="btn btn-primary btnLetter" value="A">
-                    <h4>A</h4></button>
+                    <h5>A</h5></button>
                 <button id="button-S" class="btn btn-primary btnLetter" value="S">
-                    <h4>S</h4></button>
+                    <h5>S</h5></button>
                 <button id="button-D" class="btn btn-primary btnLetter" value="D">
-                    <h4>D</h4></button>
+                    <h5>D</h5></button>
                 <button id="button-F" class="btn btn-primary btnLetter" value="F">
-                    <h4>F</h4></button>
+                    <h5>F</h5></button>
                 <button id="button-G" class="btn btn-primary btnLetter" value="G">
-                    <h4>G</h4></button>
+                    <h5>G</h5></button>
                 <button id="button-H" class="btn btn-primary btnLetter" value="H">
-                    <h4>H</h4></button>
+                    <h5>H</h5></button>
                 <button id="button-J" class="btn btn-primary btnLetter" value="J">
-                    <h4>J</h4></button>
+                    <h5>J</h5></button>
                 <button id="button-K" class="btn btn-primary btnLetter" value="K">
-                    <h4>K</h4></button>
+                    <h5>K</h5></button>
                 <button id="button-L" class="btn btn-primary btnLetter" value="L">
-                    <h4>L</h4></button>
+                    <h5>L</h5></button>
                 <br>
                 <br>
                 <button id="button-Z" class="btn btn-primary btnLetter" value="Z">
-                    <h4>Z</h4></button>
+                    <h5>Z</h5></button>
                 <button id="button-X" class="btn btn-primary btnLetter" value="X">
-                    <h4>X</h4></button>
+                    <h5>X</h5></button>
                 <button id="button-C" class="btn btn-primary btnLetter" value="C">
-                    <h4>C</h4></button>
+                    <h5>C</h5></button>
                 <button id="button-V" class="btn btn-primary btnLetter" value="V">
-                    <h4>V</h4></button>
+                    <h5>V</h5></button>
                 <button id="button-B" class="btn btn-primary btnLetter" value="B">
-                    <h4>B</h4></button>
+                    <h5>B</h5></button>
                 <button id="button-N" class="btn btn-primary btnLetter" value="N">
-                    <h4>N</h4></button>
+                    <h5>N</h5></button>
                 <button id="button-M" class="btn btn-primary btnLetter" value="M">
-                    <h4>M</h4></button>
+                    <h5>M</h5></button>
                 <br>
                 <br>
             </div>
@@ -143,8 +136,8 @@
                 <div class="col-md-4">
                 </div>
                 <div class="col-md-4">
-                    <button id="restart" class="btn btn-primary restart">
-                        <h3>Start/End Game</h3></button>
+                    <button id="restart" class="btn btn-primary restart" style="padding:5px">
+                        <h4>Restart</h4></button>
                 </div>
                 <div class="col-md-4">
                 </div>
@@ -167,6 +160,7 @@
     var lossCount = 0;
     var lossGuess = 0;
     var guessesLeft = 9;
+    var letterGussed = "";
 
     function startGame() {
 
@@ -181,6 +175,7 @@
         lossCount = 0;
         lossGuess = 0;
         guessesLeft = 9;
+        letterGussed = "";
 
 
 
@@ -191,9 +186,9 @@
         lettersInWord = selectedWord.split("");
         // check how many blanks required for each word
         numBlanks = lettersInWord.length;
-        console.log(selectedWord);
-        console.log(lettersInWord);
-        console.log(numBlanks);
+        // console.log(selectedWord);
+        // console.log(lettersInWord);
+        // console.log(numBlanks);
 
         // first method to get the blanks
 
@@ -259,25 +254,162 @@
         }
     }
 
+    // when click restart button restart the game
 
+    var restart = document.getElementById("restart");
 
-
-
+    function reset() {
+        startGame();
+    }
+    restart.onclick = reset;
 
     startGame();
-    document.onkeyup = function(event) {
-        var letterGussed = String.fromCharCode(event.keyCode).toLowerCase();
+
+
+    // var btnval = document.getElementsByTagName("button");
+    // btnval.onclick = function() {
+    //     letterGussed = ("btnval").value.toLowerCase();
+    //     checkLetters(letterGussed);
+    //     roundComplete;
+    // }
+
+    document.getElementById("button-A").onclick = function() {
+        letterGussed = document.getElementById("button-A").value.toLowerCase();
         checkLetters(letterGussed);
         roundComplete();
-        // console.log(letterGussed);
-
+    }
+    document.getElementById("button-B").onclick = function() {
+        letterGussed = document.getElementById("button-B").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-C").onclick = function() {
+        letterGussed = document.getElementById("button-C").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-D").onclick = function() {
+        letterGussed = document.getElementById("button-D").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-E").onclick = function() {
+        letterGussed = document.getElementById("button-E").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-F").onclick = function() {
+        letterGussed = document.getElementById("button-F").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-G").onclick = function() {
+        letterGussed = document.getElementById("button-G").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-H").onclick = function() {
+        letterGussed = document.getElementById("button-H").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-I").onclick = function() {
+        letterGussed = document.getElementById("button-I").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-J").onclick = function() {
+        letterGussed = document.getElementById("button-J").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-K").onclick = function() {
+        letterGussed = document.getElementById("button-K").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-C").onclick = function() {
+        letterGussed = document.getElementById("button-L").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-C").onclick = function() {
+        letterGussed = document.getElementById("button-L").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-M").onclick = function() {
+        letterGussed = document.getElementById("button-M").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-N").onclick = function() {
+        letterGussed = document.getElementById("button-N").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-O").onclick = function() {
+        letterGussed = document.getElementById("button-O").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-P").onclick = function() {
+        letterGussed = document.getElementById("button-P").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-Q").onclick = function() {
+        letterGussed = document.getElementById("button-Q").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-R").onclick = function() {
+        letterGussed = document.getElementById("button-R").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-S").onclick = function() {
+        letterGussed = document.getElementById("button-S").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-T").onclick = function() {
+        letterGussed = document.getElementById("button-T").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-U").onclick = function() {
+        letterGussed = document.getElementById("button-U").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-V").onclick = function() {
+        letterGussed = document.getElementById("button-V").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-W").onclick = function() {
+        letterGussed = document.getElementById("button-W").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-Y").onclick = function() {
+        letterGussed = document.getElementById("button-Y").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
+    document.getElementById("button-Z").onclick = function() {
+        letterGussed = document.getElementById("button-Z").value.toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
     }
 
 
-    // document.getElementById("button-M").onclick = function(event) { // // var clickedLetter = getElementById("b").value; // document.getElementById("wordToGuess").value = getElementById("button-M").value;
-
-    // function(event);
-    // };
+    document.onkeyup = function(event) {
+        letterGussed = String.fromCharCode(event.keyCode).toLowerCase();
+        checkLetters(letterGussed);
+        roundComplete();
+    }
     </script>
 </body>
 
